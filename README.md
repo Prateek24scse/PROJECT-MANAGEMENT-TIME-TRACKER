@@ -27,42 +27,40 @@ A comprehensive JavaFX application for tracking time spent on projects with role
 - **Maven** for dependency management
 - **H2 Database** (embedded) for data storage
 - **FXML** for UI layouts
-- **MVC Pattern** for clean architecture
+## Screenshots
 
-## Project Structure
+### Login Screen
+![Login Screen](screenshots/Screenshot%202025-11-23%20191920.png)
 
-```
-com.timetracker/
-├── model/          # Data models (User, Project, Task, TimeLog)
-├── controller/     # JavaFX controllers for each dashboard
-├── service/        # Business logic services
-├── dao/           # Data Access Objects for database operations
-├── util/          # Utility classes (DatabaseManager, SessionManager)
-└── view/          # FXML files for UI layouts
-```
+### Admin Dashboard - Overview
+![Admin Dashboard 1](screenshots/Screenshot%202025-11-23%20192005.png)
 
-## Getting Started
+### Admin Dashboard - Project Management
+![Admin Dashboard 2](screenshots/Screenshot%202025-11-23%20192023.png)
 
-### Prerequisites
-- Java 17 or higher
-- Maven 3.6+
+### Admin Dashboard - Reports
+![Admin Dashboard 3](screenshots/Screenshot%202025-11-23%20192038.png)
 
-### Running the Application
+### Project Manager Dashboard - Tasks Overview
+![PM Dashboard 1](screenshots/Screenshot%202025-11-23%20192053.png)
 
-1. **Clone and navigate to the project directory**
+### Project Manager Dashboard - Task Assignment
+![PM Dashboard 2](screenshots/Screenshot%202025-11-23%20192118.png)
 
-2. **Compile and run using Maven:**
-   ```bash
-   mvn clean javafx:run
-   ```
+### Project Manager Dashboard - Progress Tracking
+![PM Dashboard 3](screenshots/Screenshot%202025-11-23%20192139.png)
 
-3. **Alternative: Compile and run manually:**
-   ```bash
-   mvn clean compile
-   mvn javafx:run
-   ```
+### Team Member Dashboard - Time Logging
+![Team Member Dashboard 1](screenshots/Screenshot%202025-11-23%20192153.png)
 
-### Demo Accounts
+### Team Member Dashboard - Time History
+![Team Member Dashboard 2](screenshots/Screenshot%202025-11-23%20192219.png)
+
+### Team Member Dashboard - Task Status
+![Team Member Dashboard 3](screenshots/Screenshot%202025-11-23%20192230.png)
+
+### Application Interface Detail
+![Interface Detail](screenshots/Screenshot%202025-11-23%20192244.png)
 
 The application comes with pre-configured demo accounts:
 
