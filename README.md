@@ -142,6 +142,41 @@ The application is designed for easy extension:
 - Database schema supports future enhancements
 - Modular design allows for easy testing and maintenance
 
+## Screenshots
+
+### Login Screen
+![Login Screen](screenshots/Screenshot%202025-11-23%20191920.png)
+
+### Admin Dashboard - Overview
+![Admin Dashboard 1](screenshots/Screenshot%202025-11-23%20192005.png)
+
+### Admin Dashboard - Project Management
+![Admin Dashboard 2](screenshots/Screenshot%202025-11-23%20192023.png)
+
+### Admin Dashboard - Reports
+![Admin Dashboard 3](screenshots/Screenshot%202025-11-23%20192038.png)
+
+### Project Manager Dashboard - Tasks Overview
+![PM Dashboard 1](screenshots/Screenshot%202025-11-23%20192053.png)
+
+### Project Manager Dashboard - Task Assignment
+![PM Dashboard 2](screenshots/Screenshot%202025-11-23%20192118.png)
+
+### Project Manager Dashboard - Progress Tracking
+![PM Dashboard 3](screenshots/Screenshot%202025-11-23%20192139.png)
+
+### Team Member Dashboard - Time Logging
+![Team Member Dashboard 1](screenshots/Screenshot%202025-11-23%20192153.png)
+
+### Team Member Dashboard - Time History
+![Team Member Dashboard 2](screenshots/Screenshot%202025-11-23%20192219.png)
+
+### Team Member Dashboard - Task Status
+![Team Member Dashboard 3](screenshots/Screenshot%202025-11-23%20192230.png)
+
+### Application Interface Detail
+![Interface Detail](screenshots/Screenshot%202025-11-23%20192244.png)
+
 ## Future Enhancements
 - Real-time notifications
 - Export functionality (PDF, Excel)
