@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.shape.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.timetracker.controller.LoginController">
+   <center>
+      <HBox alignment="CENTER" spacing="0.0">
+         <children>
+            <!-- Left side with gradient background -->
+            <VBox alignment="CENTER" prefWidth="400.0" style="-fx-background-color: #667eea;">
+               <children>
+                  <VBox alignment="CENTER" spacing="20.0">
+                     <children>
+                        <!-- Custom Logo -->
+                        <StackPane prefWidth="120.0" prefHeight="120.0">
+                           <children>
+                              <Circle radius="60.0" fill="#ffffff" opacity="0.2" />
+                              <Circle radius="50.0" fill="#ffffff" opacity="0.3" />
+                              <Circle radius="40.0" fill="#ffffff" />
+                              <VBox alignment="CENTER" spacing="3.0">
+                                 <children>
+                                    <Rectangle width="3.0" height="15.0" fill="#667eea" />
+                                    <Rectangle width="12.0" height="3.0" fill="#667eea" />
+                                 </children>
+                              </VBox>
+                              <HBox alignment="CENTER_RIGHT" spacing="4.0" translateX="25.0">
+                                 <children>
+                                    <VBox spacing="3.0" alignment="BOTTOM_CENTER">
+                                       <children>
+                                          <Rectangle width="6.0" height="12.0" fill="#48bb78" arcWidth="3.0" arcHeight="3.0" />
+                                          <Rectangle width="6.0" height="20.0" fill="#4299e1" arcWidth="3.0" arcHeight="3.0" />
+                                          <Rectangle width="6.0" height="28.0" fill="#667eea" arcWidth="3.0" arcHeight="3.0" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                           <effect>
+                              <DropShadow color="#00000040" radius="15.0" />
+                           </effect>
+                        </StackPane>
+                        <Label text="PROJECT MANAGEMENT TIME TRACKER" textFill="white" wrapText="true" alignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                           <effect>
+                              <DropShadow color="#00000040" radius="5.0" />
+                           </effect>
+                        </Label>
+                        <Label text="Efficiently track and manage your project time" textFill="#ffffffcc" alignment="CENTER" wrapText="true">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets bottom="60.0" left="40.0" right="40.0" top="60.0" />
+               </padding>
+            </VBox>
+            
+            <!-- Right side with login form -->
+            <VBox alignment="CENTER" prefWidth="400.0" spacing="25.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <VBox spacing="5.0" alignment="CENTER">
+                     <children>
+                        <Label text="Welcome Back" textFill="#2d3748">
+                           <font>
+                              <Font name="System Bold" size="28.0" />
+                           </font>
+                        </Label>
+                        <Label text="Sign in to continue to your dashboard" textFill="#718096">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  
+                  <VBox spacing="20.0" prefWidth="320.0">
+                     <children>
+                        <VBox spacing="8.0">
+                           <children>
+                              <Label text="Username" textFill="#4a5568">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="usernameField" promptText="Enter your username" prefHeight="45.0" style="-fx-background-color: #f7fafc; -fx-background-radius: 8; -fx-border-color: #e2e8f0; -fx-border-radius: 8; -fx-border-width: 1.5; -fx-padding: 12;" />
+                           </children>
+                        </VBox>
+                        
+                        <VBox spacing="8.0">
+                           <children>
+                              <Label text="Password" textFill="#4a5568">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <PasswordField fx:id="passwordField" promptText="Enter your password" prefHeight="45.0" style="-fx-background-color: #f7fafc; -fx-background-radius: 8; -fx-border-color: #e2e8f0; -fx-border-radius: 8; -fx-border-width: 1.5; -fx-padding: 12;" />
+                           </children>
+                        </VBox>
+                        
+                        <Button fx:id="loginButton" mnemonicParsing="false" onAction="#handleLogin" prefHeight="50.0" prefWidth="320.0" style="-fx-background-color: #667eea; -fx-text-fill: white; -fx-background-radius: 8; -fx-cursor: hand;" text="Sign In">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                           <effect>
+                              <DropShadow color="#667eea80" radius="8.0" />
+                           </effect>
+                        </Button>
+                        
+                        <Label fx:id="errorLabel" textFill="#e53e3e" visible="false" alignment="CENTER" prefWidth="320.0" wrapText="true" style="-fx-background-color: #fed7d7; -fx-background-radius: 6; -fx-padding: 10;">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  
+                  <Separator prefWidth="320.0" />
+                  
+                  <VBox spacing="12.0" alignment="CENTER" style="-fx-background-color: #f7fafc; -fx-background-radius: 12; -fx-border-color: #e2e8f0; -fx-border-width: 1; -fx-border-radius: 12;">
+                     <children>
+                        <Label text="Demo Accounts" textFill="#2d3748">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <VBox spacing="8.0" alignment="CENTER">
+                           <children>
+                              <HBox spacing="10.0" alignment="CENTER">
+                                 <children>
+                                    <Label text="👤" />
+                                    <Label text="Admin: admin / admin123" textFill="#4a5568" alignment="CENTER">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox spacing="10.0" alignment="CENTER">
+                                 <children>
+                                    <Label text="👔" />
+                                    <Label text="Project Manager: pm1 / pm123" textFill="#4a5568" alignment="CENTER">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox spacing="10.0" alignment="CENTER">
+                                 <children>
+                                    <Label text="💻" />
+                                    <Label text="Team Member: dev1 / dev123" textFill="#4a5568" alignment="CENTER">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" left="25.0" right="25.0" top="20.0" />
+                     </padding>
+                  </VBox>
+                  
+                  <Label text="Use demo accounts to sign in" textFill="#a0aec0" alignment="CENTER" wrapText="true" prefWidth="320.0">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="50.0" left="40.0" right="40.0" top="50.0" />
+               </padding>
+            </VBox>
+         </children>
+      </HBox>
+   </center>
+</BorderPane>

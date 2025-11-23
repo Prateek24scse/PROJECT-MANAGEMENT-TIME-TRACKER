@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.timetracker.controller.TeamMemberDashboardController">
+   <top>
+      <HBox alignment="CENTER_LEFT" spacing="20.0" style="-fx-background-color: #667eea; -fx-padding: 20;">
+         <children>
+            <HBox spacing="15.0" alignment="CENTER_LEFT">
+               <children>
+                  <!-- Custom Logo -->
+                  <StackPane prefWidth="50.0" prefHeight="50.0">
+                     <children>
+                        <Circle radius="25.0" fill="#667eea" stroke="#ffffff" strokeWidth="2.0" />
+                        <Circle radius="18.0" fill="#ffffff" />
+                        <VBox alignment="CENTER" spacing="2.0">
+                           <children>
+                              <Rectangle width="2.0" height="8.0" fill="#667eea" />
+                              <Rectangle width="8.0" height="2.0" fill="#667eea" />
+                           </children>
+                        </VBox>
+                        <HBox alignment="CENTER_RIGHT" spacing="3.0" translateX="12.0">
+                           <children>
+                              <VBox spacing="2.0" alignment="BOTTOM_CENTER">
+                                 <children>
+                                    <Rectangle width="4.0" height="6.0" fill="#9f7aea" arcWidth="2.0" arcHeight="2.0" />
+                                    <Rectangle width="4.0" height="10.0" fill="#805ad5" arcWidth="2.0" arcHeight="2.0" />
+                                    <Rectangle width="4.0" height="14.0" fill="#667eea" arcWidth="2.0" arcHeight="2.0" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </StackPane>
+                  <VBox spacing="2.0">
+                     <children>
+                        <Label text="PROJECT MANAGEMENT TIME TRACKER" textFill="white">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label text="Team Member Dashboard" textFill="#e9d8fd">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <Region HBox.hgrow="ALWAYS" />
+            <Label fx:id="welcomeLabel" textFill="white">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#handleLogout" style="-fx-background-color: #e53e3e; -fx-text-fill: white; -fx-background-radius: 6; -fx-padding: 8 16 8 16; -fx-cursor: hand;" text="Logout">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <TabPane tabClosingPolicy="UNAVAILABLE" style="-fx-background-color: #f7fafc;">
+         <tabs>
+            <Tab text="Log Time">
+               <content>
+                  <VBox spacing="20.0">
+                     <children>
+                        <Label text="⏰ Log Your Time">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <GridPane hgap="15.0" vgap="15.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="300.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label text="Select Task:">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="taskComboBox" prefWidth="300.0" GridPane.columnIndex="1" />
+                              <Label text="Date:" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <DatePicker fx:id="datePicker" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label text="Hours Spent:" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="hoursField" promptText="e.g., 2.5" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label text="Description:" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextArea fx:id="descriptionArea" prefRowCount="3" promptText="Describe what you worked on..." GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Button fx:id="logTimeButton" mnemonicParsing="false" onAction="#handleLogTime" prefWidth="200.0" style="-fx-background-color: #667eea; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 12 24 12 24; -fx-cursor: hand;" text="💾 Log Time" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </GridPane>
+                        <Separator prefWidth="200.0" />
+                        <VBox spacing="10.0">
+                           <children>
+                              <Label text="⚡ Quick Actions">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <HBox spacing="12.0">
+                                 <children>
+                                    <Button fx:id="quickLog1Button" mnemonicParsing="false" onAction="#handleQuickLog1" style="-fx-background-color: #38b2ac; -fx-text-fill: white; -fx-background-radius: 6; -fx-padding: 10 20 10 20; -fx-cursor: hand;" text="⏱ 1 Hour">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="quickLog4Button" mnemonicParsing="false" onAction="#handleQuickLog4" style="-fx-background-color: #38b2ac; -fx-text-fill: white; -fx-background-radius: 6; -fx-padding: 10 20 10 20; -fx-cursor: hand;" text="⏱ 4 Hours">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="quickLog8Button" mnemonicParsing="false" onAction="#handleQuickLog8" style="-fx-background-color: #38b2ac; -fx-text-fill: white; -fx-background-radius: 6; -fx-padding: 10 20 10 20; -fx-cursor: hand;" text="⏱ 8 Hours">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                     </padding>
+                  </VBox>
+               </content>
+            </Tab>
+            <Tab text="My Time Logs">
+               <content>
+                  <VBox spacing="15.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" spacing="15.0">
+                           <children>
+                              <Label text="📋 My Time Logs">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Region HBox.hgrow="ALWAYS" />
+                              <Label text="Filter by Date Range:" />
+                              <DatePicker fx:id="filterStartDate" />
+                              <Label text="to" />
+                              <DatePicker fx:id="filterEndDate" />
+                              <Button fx:id="filterButton" mnemonicParsing="false" onAction="#handleFilter" style="-fx-background-color: #ed8936; -fx-text-fill: white; -fx-background-radius: 6; -fx-padding: 8 16 8 16; -fx-cursor: hand;" text="🔍 Filter">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <TableView fx:id="timeLogsTable" prefHeight="450.0">
+                           <columns>
+                              <TableColumn fx:id="logDateColumn" prefWidth="100.0" text="Date" />
+                              <TableColumn fx:id="logTaskColumn" prefWidth="200.0" text="Task" />
+                              <TableColumn fx:id="logProjectColumn" prefWidth="150.0" text="Project" />
+                              <TableColumn fx:id="logHoursColumn" prefWidth="80.0" text="Hours" />
+                              <TableColumn fx:id="logDescriptionColumn" prefWidth="300.0" text="Description" />
+                              <TableColumn fx:id="logCreatedColumn" prefWidth="120.0" text="Logged At" />
+                           </columns>
+                        </TableView>
+                        <HBox spacing="15.0">
+                           <children>
+                              <Label fx:id="totalHoursLabel" text="Total Hours: 0.0">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Region HBox.hgrow="ALWAYS" />
+                              <Button fx:id="refreshLogsButton" mnemonicParsing="false" onAction="#handleRefreshLogs" style="-fx-background-color: #38b2ac; -fx-text-fill: white; -fx-background-radius: 6; -fx-padding: 8 16 8 16; -fx-cursor: hand;" text="🔄 Refresh">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                  </VBox>
+               </content>
+            </Tab>
+            <Tab text="My Tasks">
+               <content>
+                  <VBox spacing="15.0">
+                     <children>
+                        <Label text="✅ My Assigned Tasks">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="myTasksTable" prefHeight="400.0">
+                           <columns>
+                              <TableColumn fx:id="myTaskIdColumn" prefWidth="50.0" text="ID" />
+                              <TableColumn fx:id="myTaskTitleColumn" prefWidth="200.0" text="Task Title" />
+                              <TableColumn fx:id="myTaskProjectColumn" prefWidth="150.0" text="Project" />
+                              <TableColumn fx:id="myTaskStatusColumn" prefWidth="100.0" text="Status" />
+                              <TableColumn fx:id="myTaskDueDateColumn" prefWidth="100.0" text="Due Date" />
+                              <TableColumn fx:id="myTaskEstHoursColumn" prefWidth="80.0" text="Est. Hours" />
+                              <TableColumn fx:id="myTaskActualHoursColumn" prefWidth="80.0" text="Logged Hours" />
+                              <TableColumn fx:id="myTaskActionsColumn" prefWidth="120.0" text="Actions" />
+                           </columns>
+                        </TableView>
+                        <HBox spacing="15.0">
+                           <children>
+                              <Button fx:id="refreshTasksButton" mnemonicParsing="false" onAction="#handleRefreshTasks" style="-fx-background-color: #38b2ac; -fx-text-fill: white; -fx-background-radius: 6; -fx-padding: 10 20 10 20; -fx-cursor: hand;" text="🔄 Refresh Tasks">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                  </VBox>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </center>
+</BorderPane>

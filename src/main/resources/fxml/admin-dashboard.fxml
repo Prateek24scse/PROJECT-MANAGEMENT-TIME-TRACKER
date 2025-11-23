@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.timetracker.controller.AdminDashboardController">
+   <top>
+      <HBox alignment="CENTER_LEFT" spacing="20.0" style="-fx-background-color: #2d3748; -fx-padding: 20;">
+         <children>
+            <HBox spacing="15.0" alignment="CENTER_LEFT">
+               <children>
+                  <!-- Custom Logo -->
+                  <StackPane prefWidth="50.0" prefHeight="50.0">
+                     <children>
+                        <Circle radius="25.0" fill="#667eea" stroke="#ffffff" strokeWidth="2.0" />
+                        <Circle radius="18.0" fill="#ffffff" />
+                        <VBox alignment="CENTER" spacing="2.0">
+                           <children>
+                              <Rectangle width="2.0" height="8.0" fill="#667eea" />
+                              <Rectangle width="8.0" height="2.0" fill="#667eea" />
+                           </children>
+                        </VBox>
+                        <HBox alignment="CENTER_RIGHT" spacing="3.0" translateX="12.0">
+                           <children>
+                              <VBox spacing="2.0" alignment="BOTTOM_CENTER">
+                                 <children>
+                                    <Rectangle width="4.0" height="6.0" fill="#48bb78" arcWidth="2.0" arcHeight="2.0" />
+                                    <Rectangle width="4.0" height="10.0" fill="#4299e1" arcWidth="2.0" arcHeight="2.0" />
+                                    <Rectangle width="4.0" height="14.0" fill="#667eea" arcWidth="2.0" arcHeight="2.0" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </StackPane>
+                  <VBox spacing="2.0">
+                     <children>
+                        <Label text="PROJECT MANAGEMENT TIME TRACKER" textFill="white">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label text="Admin Dashboard" textFill="#cbd5e0">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <Region HBox.hgrow="ALWAYS" />
+            <Label fx:id="welcomeLabel" textFill="white">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#handleLogout" style="-fx-background-color: #e53e3e; -fx-text-fill: white; -fx-background-radius: 6; -fx-padding: 8 16 8 16; -fx-cursor: hand;" text="Logout">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <TabPane tabClosingPolicy="UNAVAILABLE" style="-fx-background-color: #f7fafc;">
+         <tabs>
+            <Tab text="User Management">
+               <content>
+                  <VBox spacing="15.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                           <children>
+                              <Label text="👥 User Access Control">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Region HBox.hgrow="ALWAYS" />
+                              <Button fx:id="addUserButton" mnemonicParsing="false" onAction="#handleAddUser" style="-fx-background-color: #48bb78; -fx-text-fill: white; -fx-background-radius: 6; -fx-padding: 10 20 10 20; -fx-cursor: hand;" text="➕ Add User">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <TableView fx:id="usersTable" prefHeight="400.0">
+                           <columns>
+                              <TableColumn fx:id="userIdColumn" prefWidth="50.0" text="ID" />
+                              <TableColumn fx:id="usernameColumn" prefWidth="120.0" text="Username" />
+                              <TableColumn fx:id="fullNameColumn" prefWidth="150.0" text="Full Name" />
+                              <TableColumn fx:id="emailColumn" prefWidth="180.0" text="Email" />
+                              <TableColumn fx:id="roleColumn" prefWidth="120.0" text="Role" />
+                              <TableColumn fx:id="actionsColumn" prefWidth="100.0" text="Actions" />
+                           </columns>
+                        </TableView>
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                  </VBox>
+               </content>
+            </Tab>
+            <Tab text="Project Management">
+               <content>
+                  <VBox spacing="15.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                           <children>
+                              <Label text="📁 Project Setup">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Region HBox.hgrow="ALWAYS" />
+                              <Button fx:id="addProjectButton" mnemonicParsing="false" onAction="#handleAddProject" style="-fx-background-color: #4299e1; -fx-text-fill: white; -fx-background-radius: 6; -fx-padding: 10 20 10 20; -fx-cursor: hand;" text="➕ Add Project">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <TableView fx:id="projectsTable" prefHeight="400.0">
+                           <columns>
+                              <TableColumn fx:id="projectIdColumn" prefWidth="50.0" text="ID" />
+                              <TableColumn fx:id="projectTitleColumn" prefWidth="200.0" text="Title" />
+                              <TableColumn fx:id="projectDescriptionColumn" prefWidth="250.0" text="Description" />
+                              <TableColumn fx:id="startDateColumn" prefWidth="100.0" text="Start Date" />
+                              <TableColumn fx:id="endDateColumn" prefWidth="100.0" text="End Date" />
+                              <TableColumn fx:id="statusColumn" prefWidth="100.0" text="Status" />
+                           </columns>
+                        </TableView>
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                  </VBox>
+               </content>
+            </Tab>
+            <Tab text="Integration">
+               <content>
+                  <VBox alignment="CENTER" spacing="20.0">
+                     <children>
+                        <Label text="🔌 Time Tracking Integration">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <VBox alignment="CENTER" maxWidth="450.0" spacing="20.0" style="-fx-background-color: #ffffff; -fx-border-color: #e2e8f0; -fx-border-width: 2; -fx-border-radius: 12; -fx-padding: 40;">
+                           <children>
+                              <Label text="🔗 External Project Management Tools">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="integrationStatusLabel" text="Status: Connected" textFill="#48bb78" style="-fx-background-color: #c6f6d5; -fx-background-radius: 20; -fx-padding: 8 16 8 16;">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="testIntegrationButton" mnemonicParsing="false" onAction="#handleTestIntegration" style="-fx-background-color: #38b2ac; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 12 24 12 24; -fx-cursor: hand;" text="🧪 Test Integration">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                  </VBox>
+               </content>
+            </Tab>
+            <Tab text="Reports">
+               <content>
+                  <VBox spacing="15.0">
+                     <children>
+                        <Label text="📊 Project Reports">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <HBox spacing="15.0">
+                           <children>
+                              <VBox spacing="10.0">
+                                 <children>
+                                    <Label text="Select Project:" />
+                                    <ComboBox fx:id="projectComboBox" prefWidth="200.0" />
+                                 </children>
+                              </VBox>
+                              <VBox spacing="10.0">
+                                 <children>
+                                    <Label text="Date Range:" />
+                                    <HBox spacing="10.0">
+                                       <children>
+                                          <DatePicker fx:id="startDatePicker" />
+                                          <Label text="to" />
+                                          <DatePicker fx:id="endDatePicker" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <VBox spacing="10.0">
+                                 <children>
+                                    <Label text=" " />
+                                    <Button fx:id="generateReportButton" mnemonicParsing="false" onAction="#handleGenerateReport" style="-fx-background-color: #ed8936; -fx-text-fill: white; -fx-background-radius: 6; -fx-padding: 10 20 10 20; -fx-cursor: hand;" text="📈 Generate Report">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <PieChart fx:id="timeDistributionChart" prefHeight="350.0" title="Time Distribution by Project" />
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                  </VBox>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </center>
+</BorderPane>
